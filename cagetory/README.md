@@ -85,19 +85,20 @@ Category 和 Class Extension 的区别是什么？
    // 3.移除所有的关联对象
    void objc_removeAssociatedObjects(id object)
    ```
-2. 原理
+2. 原理  
    关联对象存储在一个全局统一管理的 HashMap 中  
-   ![](/assets/category_associations_manager.png)  
-  
-   关联对象底层实现依赖四个核心对象：  
-  
-   `AssociationsManager`
+   ![](/assets/category_associations_manager.png)
 
-   `AssociationsHashMap`
+   关联对象底层实现依赖四个核心对象：
 
-   `ObjectAssociationMap`
+   ```
+   1. AssociationsManager
+   2. AssociationsHashMap
+   3. ObjectAssociationMap
+   4. ObjcAssociation
+   ```
 
-   `ObjectionAssociation`    
+   AssociationsManager 管理着 AssociationsHashMap，HashMap 中存放着多个关联对象，某个关联对象的多个属性值以及策略组成的 ObjectAssociation 存放在 AssociationsMap 中。
 
 
 
