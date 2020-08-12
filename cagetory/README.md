@@ -74,5 +74,30 @@ Category 和 Class Extension 的区别是什么？
    }
    ```
 
+### 4. 关联对象
+
+1. 使用场合：通过关联对象来间接实现向分类中添加成员变量。
+   ```
+   // 1.添加关联对象：
+   void objc_setAssociatedObject(id object, const void * key, id value, objc_AssociationPolicy policy)
+   // 2.获得关联对象：
+   id objc_getAssociatedObject(id object, const void * key)
+   // 3.移除所有的关联对象
+   void objc_removeAssociatedObjects(id object)
+   ```
+2. 原理
+   关联对象存储在一个全局统一管理的 HashMap 中  
+   ![](/assets/category_associations_manager.png)  
+  
+   关联对象底层实现依赖四个核心对象：  
+  
+   `AssociationsManager`
+
+   `AssociationsHashMap`
+
+   `ObjectAssociationMap`
+
+   `ObjectionAssociation`    
+
 
 
