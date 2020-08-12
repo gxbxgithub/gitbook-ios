@@ -98,7 +98,9 @@ Category 和 Class Extension 的区别是什么？
    4. ObjcAssociation
    ```
 
-   AssociationsManager 管理着 AssociationsHashMap，HashMap 中存放着多个关联对象，某个关联对象的多个属性值以及策略组成的 ObjectAssociation 存放在 AssociationsMap 中。
+   AssociationsManager 管理着 AssociationsHashMap，HashMap 中存放着多个关联对象，某个关联对象的多个属性值以及策略组成的 ObjectAssociation 存放在 AssociationsMap 中。  
+  
+   参考：[https://segmentfault.com/a/1190000005677029](https://segmentfault.com/a/1190000005677029) 讲的很清楚
 
 
 
