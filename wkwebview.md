@@ -1,6 +1,7 @@
 # WKWebview
 
 1. WKNavigationDelegate
+
    ```Objective-C
    // 1.是否允许跳转
    - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
@@ -38,6 +39,8 @@
    - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation {
        NSLog(@"%s", __func__);
    }
+
+
 
    /*
    * 几个不常用的代理方法
