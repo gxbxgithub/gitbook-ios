@@ -54,7 +54,7 @@ OC 对象主要分为3中：
 
 * instance 对象（实例对象）
 * class 对象（类对象）
-* mate-class 对象（元类对象）
+* meta-class 对象（元类对象）
 
 ### instance 对象
 
@@ -62,6 +62,41 @@ OC 对象主要分为3中：
 
 * isa 指针
 * 其他成员变量
+
+### class 对象
+
+在内存中存储的信息包括：
+
+* isa 指针
+* superclass 指针
+* 类的属性信息（@property）、类的对象方法信息（instance method）
+* 类的协议信息（protocol）、类的成员变量信息（ivar）
+
+### meta-class 对象
+
+在内存中存储的信息包括：
+
+* isa 指针
+* superclass 指针
+* 类的类方法信息（class method）
+
+类对象的获取方式：
+
+```
+NSObject *object = [[NSObject alloc] init];
+
+// 类对象的获取方式
+Class objClass1 = [object class];
+Class objClass2 = [NSObject class];
+Class objClass3 = object_getClass(object); // #import <objc/runtime.h>
+
+// 元类对象的获取方式
+// 将类对象当做参数传入，获得元类对象
+Class metaClass = object_getClass(objectClass1); // #import <objc/runtime.h>
+
+// 判断是否是元类对象
+BOOL isMetaClass = class_isMetaClass(metaClass); // #import <objc/runtime.h>
+```
 
 
 
