@@ -98,5 +98,17 @@ Class metaClass = object_getClass(objectClass1); // #import <objc/runtime.h>
 BOOL isMetaClass = class_isMetaClass(metaClass); // #import <objc/runtime.h>
 ```
 
+### object\_getClass、objc\_getClass 和 class 区别
+
+1. Class object\_getClass\(id obj\)
+   * obj 是 instance 对象，返回 class 对象
+   * obj 是 class 对象，放回 meta-class 对象
+   * obj 是 meta-class 对象，返回 NSObject（基类）的 meta-class 对象
+2. Class objc\_getClass\(const char \*aClassName\)
+   * 传入字符串类名
+   * 返回对应的类对象
+3. -\(Class\)class;  +\(Class\)class;
+   * 返回类对象
+
 
 
