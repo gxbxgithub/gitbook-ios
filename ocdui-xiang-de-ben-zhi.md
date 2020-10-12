@@ -11,6 +11,24 @@ xcrun -sdk iphoneos clang -arch arm64 -rewrite-objc OC源文件 -o 输出的CPP�
 
 查看苹果源码地址：
 https://opensource.apple.com/tarballs/objc4/
+
+常用 LLDB 指令
+1. print、p：打印
+2. po：打印对象
+3. 读取内存
+    memory read/[数量][格式][字节数] 内存地址  <===>  x/[数量][格式][字节数] 内存地址
+    格式：
+        x是16进制，
+        f是浮点，
+        d是10进制
+    字节大小：
+        b：byte 1字节，
+        h：half word 2字节，
+        w：work 4字节，
+        g：giant word 8字节
+    举例：
+        x/4xw 0x10302da50
+        打印：0x10302da50: 0x8de00119 0x001dffff 0x00000000 0x00000000
 ```
 
 探讨 NSObject 对象占用的内存大小
