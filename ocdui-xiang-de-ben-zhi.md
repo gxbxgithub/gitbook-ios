@@ -16,6 +16,7 @@ https://opensource.apple.com/tarballs/objc4/
 1. print、p：打印
 2. po：打印对象
 3. 读取内存
+    （1）通过指令
     memory read/[数量][格式][字节数] 内存地址  <===>  x/[数量][格式][字节数] 内存地址
     格式：
         x是16进制，
@@ -29,6 +30,8 @@ https://opensource.apple.com/tarballs/objc4/
     举例：
         x/4xw 0x10302da50
         打印：0x10302da50: 0x8de00119 0x001dffff 0x00000000 0x00000000
+    
+    （2）通过xcode：Debug -> Debug Workflow -> View Memory
 ```
 
 探讨 NSObject 对象占用的内存大小
