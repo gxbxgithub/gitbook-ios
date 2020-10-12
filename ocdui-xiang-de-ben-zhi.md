@@ -1,4 +1,4 @@
-# OC的本质
+# OC对象的本质
 
 OC 代码底层都是 C/C++ 代码
 
@@ -47,6 +47,21 @@ NSLog(@"%zd", class_getInstanceSize([NSObject class]));
 // #import <malloc/malloc.h>
 NSLog(@"%zd", malloc_size((__bridge const void *)(obj)));
 ```
+
+# OC对象的分类
+
+OC 对象主要分为3中：
+
+* instance 对象（实例对象）
+* class 对象（类对象）
+* mate-class 对象（元类对象）
+
+### instance 对象
+
+在内存中存储的信息包括：
+
+* isa 指针
+* 其他成员变量
 
 
 
