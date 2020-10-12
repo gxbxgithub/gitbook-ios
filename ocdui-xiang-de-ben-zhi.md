@@ -30,7 +30,7 @@ https://opensource.apple.com/tarballs/objc4/
     举例：
         x/4xw 0x10302da50
         打印：0x10302da50: 0x8de00119 0x001dffff 0x00000000 0x00000000
-    
+
     （2）通过xcode：Debug -> Debug Workflow -> View Memory
 ```
 
@@ -40,9 +40,11 @@ https://opensource.apple.com/tarballs/objc4/
 NSObject *obj = [[NSObject alloc] init];
 
 // NSObject 实例对象的成员变量所占用的大小 >> 8
+// #import <objc/runtime.h>
 NSLog(@"%zd", class_getInstanceSize([NSObject class]));
 
 // 获得 obj 指针所指向的内存的大小 >> 16
+// #import <malloc/malloc.h>
 NSLog(@"%zd", malloc_size((__bridge const void *)(obj)));
 ```
 
