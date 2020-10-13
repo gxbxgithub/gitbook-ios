@@ -19,7 +19,7 @@ NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueOb
 @implementation NSKVONotifying_GPerson
 
 - (void)setName:(NSString *)name {
-  _NSSetStringValueAndNotify();
+  _NSSetObjectValueAndNotify();
 }
 
 void _NSSetStringValueAndNotify() {
